@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>mmotwani</groupId>
+  <artifactId>Blues</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Blues</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    	<dependency>
+  		<groupId>org.jsoup</groupId>
+  		<artifactId>jsoup</artifactId>
+  		<version>1.12.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.eclipse.jdt</groupId>
+  		<artifactId>org.eclipse.jdt.core</artifactId>
+  		<version>3.17.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.code.gson</groupId>
+  		<artifactId>gson</artifactId>
+  		<version>2.8.6</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.json</groupId>
+  		<artifactId>json</artifactId>
+  		<version>20190722</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.javaparser</groupId>
+  		<artifactId>javaparser-symbol-solver-core</artifactId>
+  		<version>3.22.1</version>
+  	</dependency>
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+  	<dependency>
+    	<groupId>com.beust</groupId>
+    	<artifactId>jcommander</artifactId>
+    	<version>1.78</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-exec</artifactId>
+    	<version>1.3</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.eclipse.platform</groupId>
+    	<artifactId>org.eclipse.text</artifactId>
+    	<version>3.11.0</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.eclipse.platform</groupId>
+    	<artifactId>org.eclipse.equinox.common</artifactId>
+    	<version>3.14.0</version>
+	</dependency>
+    
+    <dependency>
+    	<groupId>org.eclipse.platform</groupId>
+    	<artifactId>org.eclipse.core.resources</artifactId>
+    	<version>3.11.1</version>
+	</dependency>
+    
+  </dependencies>
+</project>
