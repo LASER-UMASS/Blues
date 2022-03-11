@@ -97,59 +97,25 @@ public class ApplyHeuristic {
 	}
 
 	// method-1 (add missing statements regardless of suspiciousness scores)
-	private static boolean statementExists(String defect, String classname, int lineno){
+	private static boolean statementExists(String defect, String classname, int lineno, ArrayList<String> defect_allstmts){
 
-		String path = ConfigurationParameters.statementDocumentsDirectory + defect + "/expression_docs/"; 
-		String[] pathnames;
-		File f = new File(path);
-		if (!f.exists()) {
-			return false;
-		}
-		pathnames = f.list();
-		for (String pathname : pathnames) {
+		for (String stmt: defect_allstmts){
+			logger.info(stmt);
 			String searchStr = classname.split("\\.")[classname.split("\\.").length-1] + ".java-" + lineno;
-			if (pathname.contains(searchStr)){
+			if (stmt.contains(searchStr)){
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	// method-2 (add missing statements with non-zero scores only. method-1 leads to better results)
-	private static boolean checkIfStatementExists(String defect, String classname, int lineno){
-		
-		String project = defect.split("_")[0].trim();
-		String bugid = defect.split("_")[1].trim();
-		String allRankedResultsPath = ConfigurationParameters.RerankedSuspiciousStmtsPath  +  "All_stmts" + "/" + project.toLowerCase() + "/" + bugid + "/stmt-susps.txt";
-		BufferedReader reader;
-		try {
-			reader = new BufferedReader(new FileReader(allRankedResultsPath));
-			String line = reader.readLine();
-			while (line != null) {
-				//	logger.info(line);
-				String classAndLineNo = line.split(",")[0].trim();
-				if (classAndLineNo.equalsIgnoreCase(classname+"#"+lineno)){
-					reader.close();
-					return true;
-				}
-				line = reader.readLine();
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
-	
-
 	// for each defect retrieve statements in statements results file
 	// for each class c and line number l:
 	//		if l-1 exists and l+2 exists and l-1 does not exists then
 	//			add c#l+1 with score = average(score(l) and score(l+2)) 
 	public static void addMissingStatements(String defect, int[] Sm_list, String[] ScoreFns) throws IOException{
 
-		getAllStatementsOfDefect(defect);
+		ArrayList<String> defect_allstmts = getAllStatementsOfDefect(defect);
 		
 		for (String fn: ScoreFns){
 			for (int S_m: Sm_list){
@@ -209,7 +175,7 @@ public class ApplyHeuristic {
 					String sPlusTwo = classname + "#" + lPlusTwo;
 
 					if (statements.contains(sMinusOne) && statements.contains(sPlusTwo) && !statements.contains(sPlusOne)){ // check if heuristic is applicable
-						if (statementExists(defect, classname, lPlusOne)){
+						if (statementExists(defect, classname, lPlusOne, defect_allstmts)){
 							Double score_sPlusOne = (stmt_score.get(sPlusTwo) + score_s)/2.0;
 							updatedresults.add(sPlusOne + "," + score_sPlusOne);
 							heuristicApplied = true;

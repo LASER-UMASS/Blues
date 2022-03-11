@@ -62,7 +62,7 @@ public class ConfigurationParameters {
 		sourceDocumentsDirectory = rootDirectory + "/file_docs";
 		sourceDocumentsIndex = rootDirectory + "/file_indexes";
 		sourceResultPath = rootDirectory + "/file_results";
-		statementDocumentsDirectory = "/media/mmotwani/Elements/IRFL/expression_docs/"; //rootDirectory + "/stmt_docs";
+		statementDocumentsDirectory = rootDirectory + "/stmt_docs";
 		statementDocumentsIndex = rootDirectory + "/stmt_indexes";
 		statementResultPath = rootDirectory + "/stmt_results";
 		CommitDBPaths = defects4JHome + "framework/projects/Chart/commit-db,"
@@ -84,7 +84,7 @@ public class ConfigurationParameters {
 			+ defects4JHome + "framework/projects/Time/commit-db";
 		XMLQueryPath = rootDirectory + "/xml_queries";
 		ProcessedQueryPath = rootDirectory + "/processed_queries";
-		resultsDirectory = "blues_results_final";													
+		resultsDirectory = "blues_results";													
 		RerankedSuspiciousStmtsPath = rootDirectory + "/" + resultsDirectory + "/" + "/blues_m";  
 		defect_expressions_path = rootDirectory + "/defect_expressions/";
 	}
