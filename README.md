@@ -12,9 +12,9 @@ We evaluate Blues using 815 defects in the Defects4J~v2.0 benchmark.
 The dependencies listed below consider this usecase of executing Blues. 
 
 1. Clone this repository.
-2. Install Java-8 and set `JAVA_HOME` to the path of Java-8 installation.
-3. Intall Defects4J~V2.0 inside the cloned repository.
-4. Intall Eclipse Neon~v4.6.3
+2. Install [Java-1.8](https://www.oracle.com/java/technologies/downloads/#java8) and set `JAVA_HOME` to the path of Java-8 installation.
+3. Install [Defects4J~V2.0](https://github.com/rjust/defects4j/releases/tag/v2.0.0) inside the cloned repository.
+4. Intall [Eclipse Neon~v4.6.3](https://archive.eclipse.org/eclipse/downloads/drops4/R-4.6.3-201703010400/)
 
 ## How to run?
 
