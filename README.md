@@ -28,12 +28,12 @@ Replace `<path-to-blues>` with the absolute path to the current directory in the
 
 To execute Blues on Defects4J defects: 
 
-1. To localize a single defect, run command: `java -jar blues.jar Chart_1` (e.g., to localize Chart 1 defect)
+1. To localize a single defect, run command: `java -jar blues.jar <project_bugid>` (e.g., run `java -jar blues.jar Chart_1` to localize Chart 1 defect ).
 2. To localize all 815 defects, run command: `java -jar blues.jar all`. 
 
 We also provide a more general version of Blues that can be used to localize statements in any arbitraty codebase and bug report (hosted on GitHub, Apache Issues, or SourceForge). 
 
-For example, to localize the bug dscribed in https://github.com/jfree/jfreechart/issues/98, which is not part of Defects4J, you can use Blues in the following way.
+For example, to localize the bug described in https://github.com/jfree/jfreechart/issues/98, which is **not** part of Defects4J, you can use Blues in the following way.
 
 1. clone the project associated with the bug report (e.g., clone https://github.com/jfree/jfreechart).
 2. identify the absolute path to the directory that contains the source code of the cloned project (e.g. <path-to-jfreechart>/src/main/java).
