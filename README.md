@@ -20,22 +20,33 @@ The dependencies listed below consider this usecase of executing Blues.
 
 There are two ways to run Blues: using the executable jar file on command line or importing the project in Eclipse and executing in IDE. For both methods following steps are required. 
 
-1. Replace `<path-to-blues>` with the absolute path to the current directory in the following files:
+Replace `<path-to-blues>` with the absolute path to the current directory in the following files:
   - `blues.settings` 
   - `indri-5.3/site-search/crawl-index`
   - `indri-5.3/site-search/build.param`
   - `indri-5.3/config.status`
-2. To localize a single defect, run cmd: `java -jar blues.jar Chart_1` (e.g., to localize Chart 1 defect)
-3. To localize all 815 defects, run cmd: `java -jar blues.jar all`. 
 
-The localized list of suspicious statements and their scored will get stored in the six sub-folders under `blues_configuration_results` directory. 
+To execute Blues on Defects4J defects: 
+
+1. To localize a single defect, run command: `java -jar blues.jar Chart_1` (e.g., to localize Chart 1 defect)
+2. To localize all 815 defects, run command: `java -jar blues.jar all`. 
+
+We also provide a more general version of Blues that can be used to localize statements in any arbitraty codebase and bug report (hosted on GitHub, Apache Issues, or SourceForge). 
+
+For example, to localize the bug dscribed in https://github.com/jfree/jfreechart/issues/98, which is not part of Defects4J, you can use Blues in the following way.
+
+1. clone the project associated with the bug report (e.g., clone https://github.com/jfree/jfreechart).
+2. identify the absolute path to the directory that contains the source code of the cloned project (e.g. <path-to-jfreechart>/src/main/java).
+3. Execute Blues using the command `java -jar blues.jar <project_bugid>  <path-to-source-directory> <URL of bug report>` (e.g., `java -jar blues.jar Chart_98  /home/manish/BluesReleased/jfreechart/src/main/java  https://github.com/jfree/jfreechart/issues/98`)
+
+The localized list of suspicious statements and their scores will get stored in the six sub-directories under `blues_configuration_results` directory. 
 Five corresponding to `m` = {1, 25, 50, 100, All} and `ScoreFn=high` and one corresponding to `m=all`, `ScoreFn=wted`
 
-4. Combine the six Blues configuration results into Blues ensemble by executing the following command. 
- `python combineBluesUsingMaxScoreConsensus.py 815defects.txt <path-to-blues_configuration_results> <path-to-blues_results>`
+4. Finally, to combine the six Blues configuration results into Blues ensemble, execute the following command. 
+ `python combineBluesUsingMaxScoreConsensus.py <path-to-file-listing-defects> <path-to-blues_configuration_results> <path-to-blues_results>`
  
  The final list of the localized statements will be stored in `<path-to-blues_results>` specified in the above command. 
- 
+
  ## How to extend or experiment using different configuration parameters?
 
 - Import the project in Eclipse and follow the steps 1 described above. 
