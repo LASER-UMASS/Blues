@@ -35,8 +35,8 @@ We also provide a more general version of Blues that can be used to localize sta
 
 For example, to localize the bug described in https://github.com/jfree/jfreechart/issues/98, which is **not** part of Defects4J, you can use Blues in the following way.
 
-1. clone the project associated with the bug report (e.g., clone https://github.com/jfree/jfreechart).
-2. identify the absolute path to the directory that contains the source code of the cloned project (e.g. <path-to-jfreechart>/src/main/java).
+1. Clone the project associated with the bug report (e.g., clone https://github.com/jfree/jfreechart).
+2. Identify the absolute path to the directory that contains the source code of the cloned project (e.g. <path-to-jfreechart>/src/main/java).
 3. Execute Blues using the command `java -jar blues.jar <project_bugid>  <path-to-source-directory> <URL of bug report>` (e.g., `java -jar blues.jar Chart_98  /home/manish/BluesReleased/jfreechart/src/main/java  https://github.com/jfree/jfreechart/issues/98`)
 
 The localized list of suspicious statements and their scores will get stored in the six sub-directories under `blues_configuration_results` directory. 
