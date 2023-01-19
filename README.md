@@ -49,7 +49,7 @@ Five corresponding to `m` = {1, 25, 50, 100, All} and `ScoreFn=high` and one cor
 
  ## How to extend or experiment using different configuration parameters?
 
-- Import the project in Eclipse and follow the steps 1 described above. 
+- Import the project in Eclipse and follow the steps to replace `<path-to-blues>` as described above. 
 - Use the main function defined in [`Blues.java`](https://github.com/LASER-UMASS/Blues/blob/main/source/mmotwani/java/main/Blues.java) to launch Blues 
-by providing the command line arguments described in 2 or 3 above. 
+by providing the command line arguments as described above. 
 - To experiment with different weights and scoring functions update the parameters in the file [`ConfigurationParameters.java`](https://github.com/LASER-UMASS/Blues/blob/main/source/mmotwani/java/configuration/ConfigurationParameters.java). 
