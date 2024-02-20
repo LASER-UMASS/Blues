@@ -40,7 +40,7 @@
   	<dependency>
   		<groupId>org.json</groupId>
   		<artifactId>json</artifactId>
-  		<version>20190722</version>
+  		<version>20231013</version>
   	</dependency>
   	<dependency>
   		<groupId>com.github.javaparser</groupId>
@@ -77,7 +77,7 @@
     <dependency>
     	<groupId>org.eclipse.platform</groupId>
     	<artifactId>org.eclipse.core.resources</artifactId>
-    	<version>3.11.1</version>
+    	<version>4.29</version>
 	</dependency>
     
   </dependencies>
